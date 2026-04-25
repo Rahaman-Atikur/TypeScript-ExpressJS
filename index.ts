@@ -1,12 +1,16 @@
 import express from 'express'
-import type { Express ,Request,Response} from 'express'
-import {pets} from './data/pets'
+import type { Express, Request, Response } from 'express'
+import { pets } from './data/pets'
+import cors from 'cors'
 const app: Express = express();
 
-app.get('/', (req:Request, res:Response): void => {
-    res.json({pets})
+app.get('/', (req: Request, res: Response): void => {
+    res.json({ pets })
 })
 const PORT = 8000;
 app.listen(PORT, (): void => {
-    console.log("Listening on port:",PORT);
+    console.log("Listening on port:", PORT);
 })
+
+/** Cors : Cors Origin Resource Sharing */
+
